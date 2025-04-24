@@ -224,7 +224,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 20%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.95);
     z-index: 2000;
@@ -246,7 +246,13 @@
 
 .main-categories li a {
     transition: all 0.3s ease;
-    font-size: 17px;
+    font-size: 15px;
+    font-family: "Cinzel", serif;
+    color: #F8F8F8;
+    text-decoration: none;
+    text-transform: capitalize; /* Transforma apenas a primeira letra em maiúscula */
+    font-weight: 500; /* Peso médio para suavidade */
+    letter-spacing: 0.5px;
 }
 
 .menu-footer a {
@@ -257,6 +263,7 @@
     border-bottom: 1px solid rgb(194, 194, 194);
     width: 98%;
     margin: auto;
+    box-shadow: #C5A880;
 }
 
 .borders {
@@ -271,6 +278,12 @@
     border-radius: 10%;
     width: 150px;
     height: 200px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.border1:hover, .border2:hover, .border3:hover, .border4:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .handbag, .womenshoes, .dress, .travelbag {
@@ -281,6 +294,40 @@
 .borders p {
     font-family: "Playfair Display", serif;
     font-size: 12px;
+    letter-spacing: 1px;
     text-align: center;
 }
 
+.news h1{
+    text-align: center;
+    font-family: "Cinzel", serif;
+    font-size: 25px;
+    margin-top: 15px;
+}
+
+/* Para Mobile */
+/* Tablet (768px - 1024px) */
+@media screen and (max-width: 1024px) {
+    .logo { font-size: 22px; }
+    .main-categories li a { font-size: 20px; }
+}
+
+/* Mobile Grande (576px - 768px) */
+@media screen and (max-width: 768px) {
+    .borders { flex-wrap: wrap; }
+    .border1, .border2, 
+    .border3, .border4 { 
+        width: 45%; 
+        margin-bottom: 20px;
+    }
+}
+
+/* Mobile Pequeno (< 576px) */
+@media screen and (max-width: 576px) {
+    .navbar { flex-direction: column; }
+    .menu1, .menu2 { 
+        justify-content: center;
+        margin: 10px 0;
+    }
+    .overlay-content { padding: 20px; }
+}
